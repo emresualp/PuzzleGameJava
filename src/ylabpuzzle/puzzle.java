@@ -65,8 +65,8 @@ public class puzzle extends JPanel implements ActionListener {
     private void createAndShowGui() throws IOException {
 
         pf = new puzzleFile();
-        button_upload = new JButton("Resim Yükle");
-        button_shuffle = new JButton("Karýþtýr");
+        button_upload = new JButton("Upload an image");
+        button_shuffle = new JButton("Get mix");
         highScoreText = new JLabel("High Score : " + pf.getHighScore());
         scoreText = new JLabel("Score : ");
         setLayout(null);
@@ -99,7 +99,7 @@ public class puzzle extends JPanel implements ActionListener {
         frame = new JFrame();
         frame.setLayout(new BorderLayout());
         frame.pack();
-        frame.setTitle("Yapboz Oyunu");
+        frame.setTitle("Puzzle Game");
         frame.setSize(600, 600);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
@@ -192,7 +192,7 @@ public class puzzle extends JPanel implements ActionListener {
                 }
                 refreshButtons();
             } else if (result == JFileChooser.CANCEL_OPTION) {
-                System.out.println("Hiçbir Dosya Seçilmedi");
+                System.out.println("No Files Selected");
             }
             try {
                 highScoreText.setText("High Score : " + pf.getHighScore());
@@ -227,9 +227,9 @@ public class puzzle extends JPanel implements ActionListener {
                         checkPieces[i][j] = true;
                         if (checkAllPieces() == true && shuffle_click_count == 0) {
                             Score = 100;
-                            scoreText.setText("Score : " + Score);
+                            scoreText.setText("Your Score : " + Score);
                             try {
-                                pf = new puzzleFile("Score:" + Score + "\n");
+                                pf = new puzzleFile("Your Score:" + Score + "\n");
                                 highScoreText.setText("High Score : " + pf.getHighScore());
                             } catch (IOException ex) {
                                 Logger.getLogger(puzzle.class.getName()).log(Level.SEVERE, null, ex);
@@ -251,20 +251,20 @@ public class puzzle extends JPanel implements ActionListener {
                             buttons[first_click_x][first_click_y].setIcon(ico);
                             if (compareImage(imgs[i][j], buttons[i][j].getIcon()) == true && compareImage(imgs[first_click_x][first_click_y], buttons[first_click_x][first_click_y].getIcon()) == true) {
                                 Score += 12.50;
-                                scoreText.setText("Score : " + Score);
+                                scoreText.setText("Your Score : " + Score);
                                 checkPieces[i][j] = true;
                                 checkPieces[first_click_x][first_click_y] = true;
                             } else if (compareImage(imgs[i][j], buttons[i][j].getIcon()) == true) {
                                 Score += 6.0;
-                                scoreText.setText("Score : " + Score);
+                                scoreText.setText("Your Score : " + Score);
                                 checkPieces[i][j] = true;
                             } else if (compareImage(imgs[first_click_x][first_click_y], buttons[first_click_x][first_click_y].getIcon()) == true) {
                                 Score += 6.0;
-                                scoreText.setText("Score : " + Score);
+                                scoreText.setText("Your Score : " + Score);
                                 checkPieces[first_click_x][first_click_y] = true;
                             } else {
                                 Score -= 1.50;
-                                scoreText.setText("Score : " + Score);
+                                scoreText.setText("Your Score : " + Score);
                             }
                             if (checkAllPieces() == true) {
                                 try {
