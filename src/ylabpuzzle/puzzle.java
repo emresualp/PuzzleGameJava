@@ -68,7 +68,7 @@ public class puzzle extends JPanel implements ActionListener {
         button_upload = new JButton("Upload an image");
         button_shuffle = new JButton("Get mix");
         highScoreText = new JLabel("High Score : " + pf.getHighScore());
-        scoreText = new JLabel("Score : ");
+        scoreText = new JLabel("Your Score : ");
         setLayout(null);
         scoreText.setBounds(320, 450, 200, 50);
         highScoreText.setBounds(100, 450, 200, 50);
@@ -203,7 +203,7 @@ public class puzzle extends JPanel implements ActionListener {
             shuffle_click_count = 0;
         } else if (ae.getSource() == button_shuffle) {
             Score = 0.0;
-            scoreText.setText("Score : ");
+            scoreText.setText("Your Score : ");
             for (int i = 0; i < pieceCount; i++) {
                 for (int j = 0; j < pieceCount; j++) {
                     checkPieces[i][j] = false;
