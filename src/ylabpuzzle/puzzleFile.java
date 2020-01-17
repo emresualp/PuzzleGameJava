@@ -26,7 +26,7 @@ public class puzzleFile {
     }
 
     public puzzleFile(String str) throws IOException {
-        file = new File("enyüksekskor.txt");
+        file = new File("highScore.txt");
         if (!file.exists()) {
             file.createNewFile();
         }
@@ -42,7 +42,7 @@ public class puzzleFile {
     }
 
     public double getHighScore() throws FileNotFoundException, IOException {
-        file = new File("enyüksekskor.txt");
+        file = new File("highScore.txt");
         if (!file.exists()) {
             file.createNewFile();
         }
