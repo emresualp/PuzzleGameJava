@@ -4,5 +4,5 @@
 
 ### Support or Contact
 
-LinkedIn : https://www.linkedin.com/in/emre-sualp/
+LinkedIn : https://www.linkedin.com/in/emre-sualp/ <br/>
 e-mail : sualpemre@outlook.com.tr 
